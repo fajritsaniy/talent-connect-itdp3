@@ -7,7 +7,7 @@ Variables    ../../Resources/web-version/web_variables.py
 *** Keywords ***
 Open Target Browser
     [Arguments]    ${url}
-    Open Browser    url=${url}    browser=${browser}    options=--no-sandbox
+    Open Browser    url=${url}    browser=${browser}    options=add_argument("headless"); add_argument("--no-sandbox"); add_argument("disable-gpu"); add_argument("--ignore-certificate-errors")
     Maximize Browser Window
 
 Input Email Credential
