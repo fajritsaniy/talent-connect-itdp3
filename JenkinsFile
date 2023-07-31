@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GIT_URL = "git@github.com:fajritsaniy/jenkins-file-sample.git"
+        GIT_URL = "https://github.com/fajritsaniy/talent-connect-itdp3.git"
         BRANCH = "master"
         ROBOT = "/home/user/.local/bin/robot"
         CHANNEL = "#jenkins"
