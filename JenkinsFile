@@ -8,6 +8,7 @@ pipeline {
         IMAGE = "my-robot-test"
         CONTAINER = "my-robot-test-app"
         DOCKER_APP = "/usr/bin/docker"
+        EMAIL_RECIPIENT = 'fajri2723@gmail.com'
     }
     stages{
         // For Docker Clean up
@@ -38,15 +39,28 @@ pipeline {
     }
     post {
         always {
-            echo "This is always run!"
-        }
-        success {
-            echo "Your build is deployed successfully!"
-            slackSend(channel: "${CHANNEL}", message: "Your build is deployed successfully!")
-        }
-        failure {
-            echo "Your build is failed!"
-            slackSend(channel: "${CHANNEL}", message: "Your build is failed!")
+            echo 'This will always run'
+            postNotify(currentBuild.result)
         }
     }
+}
+
+def postNotify(buildStatus) {
+    notifyEmail(buildStatus)
+    notifySlack(buildStatus)
+}
+
+def notifyEmail(buildStatus) {
+    def subject
+    def body
+
+    if (buildStatus == 'SUCCESS') {
+        subject = "Build Successful"
+        body = "The build has succeeded."
+    } else {
+        subject = "Build Failed"
+        body = "The build has failed."
+    }
+
+    emailext body: body, subject: subject, to: "${EMAIL_RECIPIENT}"
 }
