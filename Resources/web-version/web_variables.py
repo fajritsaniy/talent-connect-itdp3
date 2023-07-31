@@ -1,0 +1,7 @@
+url="http://167.172.84.203.nip.io/"          
+browser="googlechrome"
+email_admin="admin@gmail.com"
+email_mentor="mentor2@gmail.com"
+email_mentee="mentee1@gmail.com"
+email_judge="judges2@gmail.com"
+password="password"
