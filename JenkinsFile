@@ -27,7 +27,7 @@ pipeline {
         stage("Run"){
             steps {
                 echo "Run Test"
-                sh "${DOCKER_APP} run --user $(id -u):$(id -g) --rm --shm-size=1g -e BROWSER=chrome -v $WORKSPACE/Tests/web-version:/opt/robotframework/tests:Z -v $WORKSPACE/Results:/opt/robotframework/reports:Z ppodgorsek/robot-framework:latest"
+                sh "${DOCKER_APP} run --user 2723:2723 --rm --shm-size=1g -e BROWSER=chrome -v $WORKSPACE/Tests/web-version:/opt/robotframework/tests:Z -v $WORKSPACE/Results:/opt/robotframework/reports:Z ppodgorsek/robot-framework:latest"
             }
         }
     }
