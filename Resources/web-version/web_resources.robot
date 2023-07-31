@@ -2,11 +2,12 @@
 Library         SeleniumLibrary
 Library    DateTime
 Variables       ../../PageObject/Locators/web-version/locator.py
+Variables    ../../Resources/web-version/web_variables.py
 
 *** Keywords ***
 Open Target Browser
-    [Arguments]    ${url}    ${browser}
-    Open Browser    url=${url}    browser=${browser}
+    [Arguments]    ${url}
+    Open Browser    url=${url}    browser=${browser}    options=${chrome_option}
     Maximize Browser Window
 
 Input Email Credential
@@ -21,8 +22,8 @@ Click Login Button
     Click Button    locator=${sign_in_button}
 
 Login Into TalentConnect
-    [Arguments]    ${url}    ${browser}    ${email}    ${password}    ${assertion_text}
-    Open Target Browser    url=${url}    browser=${browser}
+    [Arguments]    ${url}   ${email}    ${password}    ${assertion_text}
+    Open Target Browser    url=${url}
     Input Email Credential    email=${email} 
     Input Password Credential    password=${password}
     Click Login Button

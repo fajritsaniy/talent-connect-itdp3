@@ -7,7 +7,7 @@ Variables    ../../Resources/web-version/web_variables.py
 
 *** Test Cases ***
 As Mentor I can login as Mentor Role on Talent Connect
-    Login Into TalentConnect    url=${url}   browser=${browser}    email=${email_mentor}    password=${password}    assertion_text=Mentor
+    Login Into TalentConnect    url=${url}    email=${email_mentor}    password=${password}    assertion_text=Mentor
 
 # As Mentor I can add activity
 #     Add New Activity on Program    role=Mentor    participant_name=Mentee

@@ -7,7 +7,7 @@ Variables    ../../Resources/web-version/web_variables.py
 
 *** Test Cases ***
 As Judge I can login as Judge Role on Talent Connect
-    Login Into TalentConnect    url=${url}   browser=${browser}    email=${email_judge}    password=${password}    assertion_text=Judge
+    Login Into TalentConnect    url=${url}    email=${email_judge}    password=${password}    assertion_text=Judge
 
 As Judge I can view the detail of program
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging

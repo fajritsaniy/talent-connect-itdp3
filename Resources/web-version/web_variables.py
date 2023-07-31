@@ -1,5 +1,6 @@
 url="http://167.172.84.203.nip.io/"          
-browser="chrome"
+browser="Chrome"
+chrome_option="--headless --no-sandbox --disable-dev-shm-usage"
 email_admin="admin@gmail.com"
 email_mentor="mentor2@gmail.com"
 email_mentee="mentee1@gmail.com"

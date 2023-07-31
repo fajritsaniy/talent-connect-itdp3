@@ -7,7 +7,7 @@ Variables    ../../Resources/web-version/web_variables.py
 
 *** Test Cases ***
 As Admin I can login as Admin Role on Talent Connect
-    Login Into TalentConnect    url=${url}   browser=${browser}    email=${email_admin}    password=${password}    assertion_text=Admin
+    Login Into TalentConnect    url=${url}    email=${email_admin}    password=${password}    assertion_text=Admin
 
 As Admin I can find program on search bar
     Search bar on Program Page    target_text=ITDP 3    exclude_text=Joging

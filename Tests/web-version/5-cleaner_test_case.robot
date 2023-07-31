@@ -6,7 +6,7 @@ Variables    ../../Resources/web-version/web_variables.py
 
 *** Test Cases ***
 As Admin I can login as Admin Role on Talent Connect to Remove Test Item
-    Login Into TalentConnect    url=${url}   browser=${browser}    email=${email_admin}    password=${password}    assertion_text=Admin
+    Login Into TalentConnect    url=${url}    email=${email_admin}    password=${password}    assertion_text=Admin
 
 # As Admin I can remove target program
 #     Remove Program TalentConnect    program_title=Automation Title    exclude_program_title=Joging
