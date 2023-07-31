@@ -7,7 +7,7 @@ Variables    ../../Resources/web-version/web_variables.py
 *** Keywords ***
 Open Target Browser
     [Arguments]    ${url}
-    Open Browser    url=${url}    browser=${browser}
+    Open Browser    url=${url}    browser=${browser}    options=${chrome_option}
     Maximize Browser Window
 
 Input Email Credential
