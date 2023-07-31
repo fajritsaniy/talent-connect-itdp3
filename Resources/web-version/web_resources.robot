@@ -7,8 +7,16 @@ Variables    ../../Resources/web-version/web_variables.py
 *** Keywords ***
 Open Target Browser
     [Arguments]    ${url}
-    Open Browser    url=${url}    browser=${browser}    options=add_argument("headless"); add_argument("--no-sandbox"); add_argument("disable-gpu"); add_argument("--ignore-certificate-errors")
-    Maximize Browser Window
+    ${chrome options} =     Evaluate    selenium.webdriver.ChromeOptions()
+    ...                     modules=selenium, selenium.webdriver
+    Call Method    ${chrome_options}   add_argument    headless
+    Call Method    ${chrome_options}   add_argument    --no-sandbox   # newly added argument
+    Call Method    ${chrome_options}   add_argument    disable-gpu
+    Call Method    ${chrome_options}   add_argument    --ignore-certificate-errors
+    ${var}=     Call Method     ${chrome_options}    to_capabilities 
+    Create Webdriver   driver_name=Chrome   alias=google   chrome_options=${chrome_options}     
+    Go To   ${url}
+    Maximize Browser Window 
 
 Input Email Credential
     [Arguments]    ${email}
