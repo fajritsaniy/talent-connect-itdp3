@@ -14,5 +14,8 @@ RUN pip3 install -r /tmp/requirements.txt
 WORKDIR /app
 COPY . .
 
+# Set Chrome options environment variable
+ENV CHROME_OPTIONS="--headless --no-sandbox --disable-dev-shm-usage"
+
 # Run Robot File
 CMD [ "robot", "--outputdir","Results","Tests/web-version" ]
