@@ -27,13 +27,13 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Build"
-                sh "sudo ${DOCKER_APP} build -t ${IMAGE} ."
+                sh "${DOCKER_APP} build -t ${IMAGE} ."
             }
         }
         stage("Run"){
             steps {
                 echo "Run Test"
-                sh "sudo ${DOCKER_APP} run --rm ${IMAGE}"
+                sh "${DOCKER_APP} run --rm ${IMAGE}"
             }
         }
     }
