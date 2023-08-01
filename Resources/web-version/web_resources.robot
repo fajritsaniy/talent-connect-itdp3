@@ -304,12 +304,12 @@ Remove Evaluation Aspect
 Remove Evaluation Category
     Scroll into end of page
     Click Element
-    ...    //div[6]//div[1]//div[2]//div[1]//label[1]//*[name()='svg']//*[name()='path' and contains(@d,'M96 184c39')]
+    ...    //div[5]//div[1]//div[2]//div[1]//label[1]//*[name()='svg']
     Sleep    1s
     Click Element    //button[normalize-space()='Delete Evaluation Category']
     Sleep    1s
     Click Element
-    ...    //*[@id="rc-tabs-0-panel-1"]/div/div/div[2]/div/div[6]/div/div[2]/div[2]/div/div/div[2]/button[2]
+    ...    //div[@class='modal fade show']//button[@type='submit'][normalize-space()='Confirm']
     Sleep    1s
 
 Scroll into end of page
@@ -375,7 +375,7 @@ Judge Evaluate Mid Evaluation
     Sleep    1s
     Wait Until Page Contains    Automation Aspect
     Sleep    2s
-    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/div[5]//input[@type='radio']
+    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[1]/div[2]/div/div[5]//input[@type='radio']
     Sleep    2s
     Click Element    //button[normalize-space()='Add Evaluation']
     Sleep    1s
@@ -388,31 +388,29 @@ Jugde Evaluate Final Evaluation
     Sleep    1s
     Wait Until Page Contains    Automation Aspect
     Sleep    2s
-    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/div[5]//input[@type='radio']
+    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[1]/div[2]/div/div[5]//input[@type='radio']
     Sleep    2s
     Click Element    //button[normalize-space()='Add Evaluation']
     Sleep    2s
 
 Judge View Result Mid Evaluation
     Sleep    1s
-    Click Element    //button[normalize-space()='Evaluate']
+    Click Element    //span[normalize-space()='Mentee 1']
     Sleep    1s
     Wait Until Page Contains    Automation Category
     Wait Until Page Contains    Total Score
     Sleep    1s
-    Click Element    //button[@type='submit']//h2//*[name()='svg']
+    Click Element    //a[@class='ant-breadcrumb-link']
     Sleep    1s
 
 Judge View Result Final Evaluation
     Sleep    1s
     Click Element    //h6[normalize-space()='Final Evaluation']
     Sleep    1s
-    Click Element    //button[normalize-space()='Evaluate']
+    Click Element    //span[normalize-space()='Mentee 1']
     Sleep    1s
     Wait Until Page Contains    Automation Category
     Wait Until Page Contains    Total Score
-    Sleep    1s
-    Click Element    //button[@type='submit']//h2//*[name()='svg']
     Sleep    1s
 
 # MENTEES

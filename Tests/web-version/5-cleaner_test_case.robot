@@ -18,6 +18,8 @@ As Admin I can remove evaluation aspect
     Remove Evaluation Aspect
 
 As Admin I can remove evaluation category
+    Move to Evaluation Scoring Page
+    Sleep    1s
     Remove Evaluation Category
 
 As Admin I can perform Logout

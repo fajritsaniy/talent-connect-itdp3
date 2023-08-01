@@ -21,7 +21,6 @@ As Judge I can evaluate on Mid Evaluation
 As Judge I can evaluate on Final Evaluation
     Jugde Evaluate Final Evaluation
 
-
 As Judge I can view result of Mid Evaluation
     Judge View Result Mid Evaluation
 
