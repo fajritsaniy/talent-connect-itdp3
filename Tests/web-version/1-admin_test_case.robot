@@ -24,45 +24,45 @@ As Admin I can add new activity
 As Admin I Can Move to User Management Page
     Move to User Management Page
 
-# As Admin I Can Filter Mentee user
-#     Filter on User Management Page    role=Mentee
+As Admin I Can Filter Mentee user
+    Filter on User Management Page    role=Mentee
 
-# As Admin I Can Filter Mentor user
-#     Filter on User Management Page    role=Mentor
+As Admin I Can Filter Mentor user
+    Filter on User Management Page    role=Mentor
 
-# As Admin I Can Filter Judge user
-#     Filter on User Management Page    role=Judge
-#     Reload Page
-#     Sleep    1s
+As Admin I Can Filter Judge user
+    Filter on User Management Page    role=Judge
+    Reload Page
+    Sleep    1s
 
-# As Admin I can filter active user
-#     Filter User Activation    status=Active
+As Admin I can filter active user
+    Filter User Activation    status=Active
 
-# As Admin I can filter inactive user
-#     Filter User Activation    status=Inactive
-#     Reload Page
-#     Sleep    1s
+As Admin I can filter inactive user
+    Filter User Activation    status=Inactive
+    Reload Page
+    Sleep    1s
 
-# As Admin I Can Search User by Name
-#     Search bar on User Management Page    target_text=mentee    exclude_text=Mentor
+As Admin I Can Search User by Name
+    Search bar on User Management Page    target_text=mentee    exclude_text=Mentor
 
-# As Admin I can add new mentee user
-#     Add New User on TalentConnect    name=Automation User    email=automation@gmail.com    role=Mentee
+As Admin I can add new mentee user
+    Add New User on TalentConnect    name=Automation User    email=automation@gmail.com    role=Mentee
 
-# As Admin I can assign mentee to mentor
-#     Assign Mentee to Mentor
+As Admin I can assign mentee to mentor
+    Assign Mentee to Mentor
 
-# As Admin I can assign mentee to judges
-#     Assign Mentee to Judge
+As Admin I can assign mentee to judges
+    Assign Mentee to Judge
 
-# As Admin I can create evaluation aspect
-#     Create new Evaluation Aspect    title_aspect=Automation Aspect    description_aspect=Automation Description
+As Admin I can create evaluation aspect
+    Create new Evaluation Aspect    title_aspect=Automation Aspect    description_aspect=Automation Description
 
-# As Admin I can create evaluation category
-#     Create new Evaluation Category    title_aspect=Automation Aspect    title_category=Automation Category
+As Admin I can create evaluation category
+    Create new Evaluation Category    title_aspect=Automation Aspect    title_category=Automation Category
 
-# As Admin I can assign evaluation category to Program
-#     Assign Evaluation Category into Program    category_name=Automation Category
+As Admin I can assign evaluation category to Program
+    Assign Evaluation Category into Program    category_name=Automation Category
 
 As Admin I can perform Logout
     Click Logout Button
