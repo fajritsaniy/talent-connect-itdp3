@@ -33,7 +33,7 @@ pipeline {
         stage("Run"){
             steps {
                 echo "Run Test"
-                sh "${DOCKER_APP} run --rm ${IMAGE}"
+                sh "${ROBOT} --outputdir Results Tests/web-version"
             }
         }
     }

@@ -7,4 +7,4 @@ email_mentee="mentee1@gmail.com"
 email_judge="judges2@gmail.com"
 password="password"
 
-window_size="--window-size=1920,1080"
+window_size="window-size=1280,720"

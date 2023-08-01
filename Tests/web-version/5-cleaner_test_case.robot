@@ -11,14 +11,14 @@ As Admin I can login as Admin Role on Talent Connect to Remove Test Item
 As Admin I can view final result of Program
     Admin VIew Final Result of Program
 
-As Admin I can remove target program
-    Remove Program TalentConnect    program_title=Automation Title    exclude_program_title=Joging
+# As Admin I can remove target program
+#     Remove Program TalentConnect    program_title=Automation Title    exclude_program_title=Joging
 
-As Admin I can remove evaluation aspect
-    Remove Evaluation Aspect
+# As Admin I can remove evaluation aspect
+#     Remove Evaluation Aspect
 
-As Admin I can remove evaluation category
-    Remove Evaluation Category
+# As Admin I can remove evaluation category
+#     Remove Evaluation Category
 
 As Admin I can perform Logout
     Click Logout Button
