@@ -50,7 +50,7 @@ Login Into TalentConnect
 
 Move to Program Page
     Click Element    locator=${program_button}
-    Sleep    2s
+    Sleep    1s
 
 Add New TalentConnect Program
     [Arguments]    ${title}    ${start_date}    ${end_date}
@@ -66,18 +66,18 @@ Add New Participant on Program
     Move to Program Page
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
     Click Element    locator=${target_program}
-    Sleep    3s
+    Sleep    2s
     Click Element    locator=${participant_tab}
     Wait Until Page Contains    text=Mentees
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${add_new_participant}
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${show_participant_list}
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    ${participant_name}
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${confirm_add_participant}
 
 Add New Activity on Program
@@ -87,10 +87,10 @@ Add New Activity on Program
     ${date}=    Get Current Date    UTC
     ${future_date}    Add Time To Date    ${date}    ${day_addition} days
     ${activity_date}    Convert Date    ${future_date}    result_format=%m-%d-%Y 
-    Sleep    2s
+    Sleep    1s
     Move to Program Page
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${target_program}
     Click Element    //button[normalize-space()='+ Add Activity']
     Wait Until Page Contains    Add Activity
@@ -109,11 +109,11 @@ Add New Activity on Program
 Add Participant when Create Activity
     [Arguments]    ${participant_name}
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[4]/div/div/div[1]/div[2]
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    ${participant_name}
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
-    Sleep    2s
+    Sleep    1s
 
 Search bar on Program Page
     [Arguments]    ${target_text}    ${exclude_text}
@@ -147,12 +147,12 @@ Add New User on TalentConnect
     Input Text    locator=//input[@id='email']    text=${email}
     Click Element    locator=//*[@id="role"]/div/div[1]/div[2]
     Press Keys    None    ${role}
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
     Wait Until Element Is Visible    locator=//button[normalize-space()='Cancel']   
     # Change to //button[normalize-space()='Add User'] on production
     Click Element    locator=//button[normalize-space()='Cancel']
-    Sleep    2s
+    Sleep    1s
 
 Assign Mentee to Mentor
     Reload Page
@@ -161,60 +161,60 @@ Assign Mentee to Mentor
     Click Element    //div[3]//div[5]//div[1]//label[1]//*[name()='svg']
     Wait Until Element Is Visible    //button[normalize-space()='Assign Mentee to Mentor']
     Click Element    //button[normalize-space()='Assign Mentee to Mentor']
-    Sleep    2s
+    Sleep    1s
     Scroll into end of page
     Wait Until Element Is Visible    //h5[normalize-space()='Automation Title']    
     Click Element    //h5[normalize-space()='Automation Title']
-    Sleep    2s  
+    Sleep    1s  
     Click Element    //button[normalize-space()='+ Add Mentee']
-    Sleep    2s
+    Sleep    1s
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/div[1]/div[2]
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    Mentee
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
     Wait Until Element Is Visible    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[2]/button[2]    
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[2]/button[2]
-    Sleep    2s
+    Sleep    1s
 
 Assign Mentee to Judge
     Move to User Management Page
     Reload Page
     Search bar on User Management Page    target_text=judges    exclude_text=Mentee
-    Sleep    2s
+    Sleep    1s
     Click Element    //div[3]//div[5]//div[1]//label[1]//*[name()='svg']
-    Sleep    3s
-    Click Element    //button[normalize-space()='Assign Mentee to Judge']
     Sleep    2s
+    Click Element    //button[normalize-space()='Assign Mentee to Judge']
+    Sleep    1s
     Scroll into end of page
     Click Element    //h5[normalize-space()='Automation Title']
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='+ Add Panelist']
-    Sleep    3s
+    Sleep    2s
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/div[1]/div[2]
-    Sleep    3s
+    Sleep    2s
     Press Keys    None    Mentee
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
-    Sleep    2s
+    Sleep    1s
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[2]/button[2]
-    Sleep    2s
+    Sleep    1s
 
 Filter on User Management Page
     [Arguments]    ${role}
     Click Element    locator=//*[@id="role"]/div/div[1]/div[2]
     Press Keys    None    ${role}
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
-    Sleep    2s
+    Sleep    1s
     
 Filter User Activation
     [Arguments]    ${status}
     Click Element    locator=//*[@id="status"]/div/div[1]/div[2]
     Press Keys    None    ${status}
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
-    Sleep    2s
+    Sleep    1s
 
 Move to Evaluation Scoring Page
     Click Element    locator=${evaluation_scoring_button}
@@ -227,62 +227,62 @@ Create new Evaluation Aspect
     Wait Until Page Contains    Add Evaluation Aspect
     Input Text    //input[@id='evaluationAspectTitle']    ${title_aspect}
     Click Element    //*[@id="option"]/div/div[1]/div[2]
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    5
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
-    Sleep    2s
+    Sleep    1s
     Input Text    //textarea[@id='description']    ${description_aspect}
     Scroll into end of page
     Click Element    //button[normalize-space()='Add Evaluation Aspect']
-    Sleep    2s
+    Sleep    1s
 
 Create new Evaluation Category
     [Arguments]    ${title_aspect}    ${title_category}
     Scroll into end of page
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='+ Add Evaluation Category']
     Wait Until Page Contains    Add Evaluation Category
     Input Text    //input[@id='evaluationAspectTitle']    ${title_category}
     Click Element    //button[normalize-space()='+']
-    Sleep    2s
+    Sleep    1s
     Click Element    //label[normalize-space()='${title_aspect}']//input[@type='checkbox']
-    Sleep    2s
+    Sleep    1s
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[3]/button[2]
-    Sleep    2s
+    Sleep    1s
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[1]/form/button[1]
-    Sleep    2s
+    Sleep    1s
     Reload Page
 
 Assign Evaluation Category into Program
     [Arguments]    ${category_name}
-    Sleep    3s
+    Sleep    2s
     Click Element    //div[@id='rc-tabs-0-tab-2']
-    Sleep    2s
+    Sleep    1s
     Scroll into end of page
-    Sleep    2s
+    Sleep    1s
     Click Element    //span[normalize-space()='Automation Title']
-    Sleep    2s
+    Sleep    1s
     Scroll into top of page
-    Sleep    2s
+    Sleep    1s
     Wait Until Page Contains    Add Category
     Click Element    //div[@class='d-flex align-items-center gap-2']
-    Sleep    2s
+    Sleep    1s
     Click Element    //*[@id="type"]/div/div[1]/div[2]
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    ${category_name}
-    Sleep    2s
+    Sleep    1s
     Press Keys    None    RETURN
-    Sleep    2s
+    Sleep    1s
     Input Text    //input[@placeholder='Enter Weight ex: 10']    100
-    Sleep    2s
+    Sleep    1s
     Click Element    //*[@id="rc-tabs-0-panel-2"]/div/div[2]/div/div/div[2]/button[2]
-    Sleep    2s
+    Sleep    1s
 
 Admin VIew Final Result of Program
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
     Click Element    locator=${target_program}
-    Sleep    3s
+    Sleep    2s
     Click Element    locator=//div[@id='rc-tabs-0-tab-3']
     Wait Until Page Contains    Evaluation Progress
 
@@ -290,46 +290,46 @@ Admin VIew Final Result of Program
 Remove Evaluation Aspect
     Move to Evaluation Scoring Page
     Execute JavaScript    window.scrollBy(0, 200)
-    Sleep    2s
+    Sleep    1s
     Click Element    //div[6]//div[1]//div[5]//div[1]//label[1]//*[name()='svg']
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='Delete Evaluation Aspect']
-    Sleep    2s
+    Sleep    1s
     Click Element
     ...    //*[@id="rc-tabs-0-panel-1"]/div/div/div[1]/div/div[6]/div/div[5]/div[2]/div/div/div[2]/button[2]
-    Sleep    2s
+    Sleep    1s
 
 Remove Evaluation Category
     Scroll into end of page
     Click Element
     ...    //div[6]//div[1]//div[2]//div[1]//label[1]//*[name()='svg']//*[name()='path' and contains(@d,'M96 184c39')]
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='Delete Evaluation Category']
-    Sleep    2s
+    Sleep    1s
     Click Element
     ...    //*[@id="rc-tabs-0-panel-1"]/div/div/div[2]/div/div[6]/div/div[2]/div[2]/div/div/div[2]/button[2]
-    Sleep    2s
+    Sleep    1s
 
 Scroll into end of page
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    Sleep    2s
+    Sleep    1s
 
 Scroll into top of page
     Execute JavaScript    window.scrollTo(0, 0)
-    Sleep    2s
+    Sleep    1s
 
 Click Logout Button
     Click Element    locator=${logout_button}
-    Sleep    2s
+    Sleep    1s
     Close Browser
     
 
 # MENTOR
 Mentor View Activity Detail
-    Sleep    3s
+    Sleep    2s
     Click Element    //h5[normalize-space()='Past Activities']
     Wait Until Page Contains    text=Mentor Automation Activity
-    Sleep    3s
+    Sleep    2s
     Click Element    locator=//h5[normalize-space()='Mentor Automation Activity']
     Wait Until Page Contains    text=Mentor Automation Activity Description
     Wait Until Page Contains    text=Mentor Automation Activity
@@ -337,21 +337,21 @@ Mentor View Activity Detail
 Mentor Write Feedback for Mentee
     Move to Program Page
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${target_program}   
-    Sleep    3s
-    Click Element    //h5[normalize-space()='Past Activities']
     Sleep    2s
+    Click Element    //h5[normalize-space()='Past Activities']
+    Sleep    1s
     Scroll into end of page
     Click Element    //button[normalize-space()='Write Feedback']
-    Sleep    3s
+    Sleep    2s
     Click Element    //span[normalize-space()='Mentee 1']
     Wait Until Element Is Visible    //button[normalize-space()='Add Feedback']
     Input Text    locator=//textarea[@id='feedback']    text=Automation Feedback
     Click Element    //button[normalize-space()='Add Feedback']
-    Sleep    2s
+    Sleep    1s
     Reload Page
-    Sleep    2s
+    Sleep    1s
     Click Element    //li[@class='list-group-item list-group-item-action border-0 px-3']//div
     Wait Until Page Contains    text=Automation Feedback
 
@@ -364,95 +364,95 @@ Mentor Check Feedback for Mentee
 # JUDGES
 Judge View Detail Program
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${target_program}   
 
 Judge Evaluate Mid Evaluation
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='Evaluate']
-    Sleep    2s
+    Sleep    1s
     Wait Until Page Contains    Automation Aspect
-    Sleep    3s
-    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/div[5]//input[@type='radio']
-    Sleep    3s
-    Click Element    //button[normalize-space()='Add Evaluation']
     Sleep    2s
+    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/div[5]//input[@type='radio']
+    Sleep    2s
+    Click Element    //button[normalize-space()='Add Evaluation']
+    Sleep    1s
 
 Jugde Evaluate Final Evaluation
-    Sleep    2s
+    Sleep    1s
     Click Element    //h6[normalize-space()='Final Evaluation']
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='Evaluate']
-    Sleep    2s
+    Sleep    1s
     Wait Until Page Contains    Automation Aspect
-    Sleep    3s
+    Sleep    2s
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/div[5]//input[@type='radio']
-    Sleep    3s
+    Sleep    2s
     Click Element    //button[normalize-space()='Add Evaluation']
-    Sleep    3s
+    Sleep    2s
 
 Judge View Result Mid Evaluation
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='Evaluate']
-    Sleep    2s
+    Sleep    1s
     Wait Until Page Contains    Automation Category
     Wait Until Page Contains    Total Score
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[@type='submit']//h2//*[name()='svg']
-    Sleep    2s
+    Sleep    1s
 
 Judge View Result Final Evaluation
-    Sleep    2s
+    Sleep    1s
     Click Element    //h6[normalize-space()='Final Evaluation']
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[normalize-space()='Evaluate']
-    Sleep    2s
+    Sleep    1s
     Wait Until Page Contains    Automation Category
     Wait Until Page Contains    Total Score
-    Sleep    2s
+    Sleep    1s
     Click Element    //button[@type='submit']//h2//*[name()='svg']
-    Sleep    2s
+    Sleep    1s
 
 # MENTEES
 Mentee View Program Page
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${target_program}
 
 Mentee View Participant Program
-    Sleep    2s
+    Sleep    1s
     Click Element    //div[@id='rc-tabs-0-tab-2']
-    Sleep    2s
+    Sleep    1s
 
 Mentee View Mid Evaluation Result
     Click Element    //div[@id='rc-tabs-0-tab-3']
-    Sleep    2s
+    Sleep    1s
     Click Element    //span[normalize-space()='Mid Evaluation']
     Wait Until Page Contains    Total Score
 
 Mentee View Final Evaluation Result
-    Sleep    2s
+    Sleep    1s
     Click Element    //span[normalize-space()='Final Evaluation']
     Wait Until Page Contains    Total Score
-    Sleep    2s
+    Sleep    1s
 
 Mentee View Upcoming Activity
     Move to Program Page
     Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
-    Sleep    2s
+    Sleep    1s
     Click Element    locator=${target_program}
-    Sleep    2s
+    Sleep    1s
 
 Mentee View Past Activity
     Click Element    //h5[normalize-space()='Past Activities']
-    Sleep    2s
+    Sleep    1s
     Scroll into end of page
 
 Mentee View Activity Detail
-    Sleep    2s
+    Sleep    1s
     Click Element    //h5[normalize-space()='Mentor Automation Activity']
     
 Mentee View Feedback
-    Sleep    2s
+    Sleep    1s
     Scroll into end of page
-    Sleep    2s
+    Sleep    1s
