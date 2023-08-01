@@ -7,16 +7,20 @@ Variables    ../../Resources/web-version/web_variables.py
 *** Keywords ***
 Open Target Browser
     [Arguments]    ${url}
+    # Production
     ${chrome options} =     Evaluate    selenium.webdriver.ChromeOptions()
     ...                     modules=selenium, selenium.webdriver
     Call Method    ${chrome_options}   add_argument    headless
     Call Method    ${chrome_options}   add_argument    --no-sandbox   # newly added argument
     Call Method    ${chrome_options}   add_argument    disable-gpu
     Call Method    ${chrome_options}   add_argument    --ignore-certificate-errors
+    Call Method    ${chrome_options}   add_argument    ${window_size}
     ${var}=     Call Method     ${chrome_options}    to_capabilities 
     Create Webdriver   driver_name=Chrome   alias=google   chrome_options=${chrome_options}     
     Go To   ${url}
-    Maximize Browser Window 
+    Maximize Browser Window
+    # # Development
+    # Open Browser    ${url}    Chrome
 
 Input Email Credential
     [Arguments]    ${email}
@@ -240,37 +244,62 @@ Create new Evaluation Category
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[3]/button[2]
     Sleep    1s
     Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[1]/form/button[1]
-    Sleep    2s
+    Sleep    1s
+    Reload Page
 
 Assign Evaluation Category into Program
-    [Arguments]    ${program_name}
-    Scroll into end of page
-    Click Element
-    ...    //div[6]//div[1]//div[2]//div[1]//label[1]//*[name()='svg']//*[name()='path' and contains(@d,'M96 184c39')]
+    [Arguments]    ${category_name}
+    # Scroll into end of page
+    # Click Element
+    # ...    //div[6]//div[1]//div[2]//div[1]//label[1]//*[name()='svg']//*[name()='path' and contains(@d,'M96 184c39')]
+    # Sleep    1s
+    # Click Element    //button[normalize-space()='Assign to Program']
+    # Sleep    1s
+    # Click Element    //*[@id="type"]/div/div[1]/div[2]
+    # Sleep    1s
+    # Press Keys    None    ${program_name}
+    # Sleep    1s
+    # Press Keys    None    RETURN
+    # Sleep    1s
+    # Input Text    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div/div/input    100
+    # Sleep    1s
+    # Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[2]/button[2]
+    # Sleep    1s
+    Sleep    2s
+    Click Element    //div[@id='rc-tabs-0-tab-2']
     Sleep    1s
-    Click Element    //button[normalize-space()='Assign to Program']
+    Scroll into end of page
+    Sleep    1s
+    Click Element    //span[normalize-space()='Automation Title']
+    Sleep    1s
+    Scroll into top of page
+    Sleep    1s
+    Wait Until Page Contains    Add Category
+    Click Element    //div[@class='d-flex align-items-center gap-2']
     Sleep    1s
     Click Element    //*[@id="type"]/div/div[1]/div[2]
     Sleep    1s
-    Press Keys    None    ${program_name}
+    Press Keys    None    ${category_name}
     Sleep    1s
     Press Keys    None    RETURN
     Sleep    1s
-    Input Text    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div/div/input    100
+    Input Text    //input[@placeholder='Enter Weight ex: 10']    100
     Sleep    1s
-    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div/div[2]/button[2]
+    Click Element    //*[@id="rc-tabs-0-panel-2"]/div/div[2]/div/div/div[2]/button[2]
     Sleep    1s
+
+
 
 Remove Evaluation Aspect
     Move to Evaluation Scoring Page
     Execute JavaScript    window.scrollBy(0, 200)
     Sleep    1s
-    Click Element    //*[@id="root"]/div[1]/div/div/div[2]/div[1]/div/div[1]/div/div[6]/div/div[5]/div[1]/label
+    Click Element    //div[6]//div[1]//div[5]//div[1]//label[1]//*[name()='svg']
     Sleep    1s
     Click Element    //button[normalize-space()='Delete Evaluation Aspect']
     Sleep    1s
     Click Element
-    ...    //*[@id="root"]/div[1]/div/div/div[2]/div[1]/div/div[1]/div/div[6]/div/div[5]/div[2]/div/div/div[2]/button[2]
+    ...    //*[@id="rc-tabs-0-panel-1"]/div/div/div[1]/div/div[6]/div/div[5]/div[2]/div/div/div[2]/button[2]
     Sleep    1s
 
 Remove Evaluation Category
@@ -281,11 +310,15 @@ Remove Evaluation Category
     Click Element    //button[normalize-space()='Delete Evaluation Category']
     Sleep    1s
     Click Element
-    ...    //*[@id="root"]/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[6]/div/div[2]/div[2]/div/div/div[2]/button[2]
+    ...    //*[@id="rc-tabs-0-panel-1"]/div/div/div[2]/div/div[6]/div/div[2]/div[2]/div/div/div[2]/button[2]
     Sleep    1s
 
 Scroll into end of page
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Sleep    1s
+
+Scroll into top of page
+    Execute JavaScript    window.scrollTo(0, 0)
     Sleep    1s
 
 Click Logout Button

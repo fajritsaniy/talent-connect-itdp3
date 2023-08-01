@@ -27,11 +27,6 @@ As Judge I can evaluate on Mid Evaluation
     Sleep    2s
     Click Element    //button[normalize-space()='Add Evaluation']
     Sleep    1s
-    Move to Program Page
-    Sleep    1s
-    Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
-    Sleep    1s
-    Click Element    locator=${target_program} 
 
 As Judge I can evaluate on Final Evaluation
     Sleep    1s
@@ -45,11 +40,6 @@ As Judge I can evaluate on Final Evaluation
     Sleep    2s
     Click Element    //button[normalize-space()='Add Evaluation']
     Sleep    2s
-    Move to Program Page
-    Sleep    1s
-    Search bar on Program Page    target_text=Automation Title    exclude_text=Joging
-    Sleep    1s
-    Click Element    locator=${target_program}
 
 
 As Judge I can view result of Mid Evaluation

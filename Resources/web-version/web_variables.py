@@ -6,3 +6,5 @@ email_mentor="mentor2@gmail.com"
 email_mentee="mentee1@gmail.com"
 email_judge="judges2@gmail.com"
 password="password"
+
+window_size="--window-size=1920,1080"
