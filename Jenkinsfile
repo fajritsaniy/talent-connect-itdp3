@@ -7,7 +7,7 @@ pipeline {
         CHANNEL = "#jenkins"
         IMAGE = "my-robot-test"
         CONTAINER = "my-robot-test-app"
-        DOCKER_APP = "docker"
+        DOCKER_APP = "/usr/bin/docker"
         EMAIL_RECIPIENT = 'fajri2723@gmail.com'
     }
     stages{
